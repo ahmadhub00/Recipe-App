@@ -40,4 +40,15 @@ export default function App() {
       console.error('Failed to save recipes:', error);
     }
   };
+
+   // Add a new recipe
+   const addRecipe = () => {
+    if (!title || !ingredients || !steps) {
+      Alert.alert('Error', 'Please fill all fields!');
+      return;
+    }
+    const newRecipe = { id: Date.now().toString(), title, ingredients, steps, image };
+    const updatedRecipes = [...recipes, newRecipe];
+    saveRecipes(updatedRecipes);
+
 }
