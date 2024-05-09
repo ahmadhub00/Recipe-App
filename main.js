@@ -18,4 +18,15 @@ export default function App() {
     loadRecipes();
   }, []);
 
+   // Load recipes from AsyncStorage
+   const loadRecipes = async () => {
+    try {
+      const storedRecipes = await AsyncStorage.getItem('recipes');
+      if (storedRecipes) {
+        setRecipes(JSON.parse(storedRecipes));
+      }
+    } catch (error) {
+      console.error('Failed to load recipes:', error);
+    }
+  };
 }
