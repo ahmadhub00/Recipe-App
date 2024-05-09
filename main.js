@@ -29,4 +29,15 @@ export default function App() {
       console.error('Failed to load recipes:', error);
     }
   };
+
+  
+  // Save recipes to AsyncStorage
+  const saveRecipes = async (updatedRecipes) => {
+    try {
+      await AsyncStorage.setItem('recipes', JSON.stringify(updatedRecipes));
+      setRecipes(updatedRecipes);
+    } catch (error) {
+      console.error('Failed to save recipes:', error);
+    }
+  };
 }
