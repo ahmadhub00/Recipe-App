@@ -96,4 +96,21 @@ export default function App() {
       recipe.title.toLowerCase().includes(search.toLowerCase()) ||
       recipe.ingredients.toLowerCase().includes(search.toLowerCase())
   );
-}
+
+return (
+    <View style={styles.container}>
+      <Text style={styles.heading}>Recipe Management App</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Title"
+        value={title}
+        onChangeText={setTitle}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Ingredients"
+        value={ingredients}
+        onChangeText={setIngredients}
+      />
+      );
+      }
