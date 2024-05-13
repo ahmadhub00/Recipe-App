@@ -51,4 +51,11 @@ export default function App() {
     const updatedRecipes = [...recipes, newRecipe];
     saveRecipes(updatedRecipes);
 
+     // Clear inputs
+     setTitle('');
+     setIngredients('');
+     setSteps('');
+     setImage(null);
+   };
+
 }
