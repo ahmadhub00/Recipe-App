@@ -112,5 +112,26 @@ return (
         value={ingredients}
         onChangeText={setIngredients}
       />
+      
+      <TextInput
+      style={styles.input}
+      placeholder="Steps"
+      value={steps}
+      onChangeText={setSteps}
+    />
+     <TextInput
+      style={styles.input}
+      placeholder="Search"
+      value={search}
+      onChangeText={setSearch}
+    />
+
+
+    <Button title="Pick Image" onPress={pickImage} />
+    {image && <Image source={{ uri: image }} style={styles.image} />}
+    <View style={styles.spacer} />
+    <Button title="Add Recipe" onPress={addRecipe} />
+    
+    </View>
       );
       }
